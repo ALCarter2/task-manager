@@ -5,11 +5,13 @@
  */
 export function sanitizeTitle(html: string): string {
   return html
+    .replace(/<script[^>]*>[\s\S]*?<\/script>/gi, '')
     .replace(/<b(\s[^>]*)?>/gi, '<strong>')
     .replace(/<\/b>/gi, '</strong>')
     .replace(/<i(\s[^>]*)?>/gi, '<em>')
     .replace(/<\/i>/gi, '</em>')
     .replace(/<(?!\/?(?:strong|em|u)\b)[^>]*>/gi, '')
+    .replace(/<(strong|em|u)\s[^>]*>/gi, '<$1>') // strip attributes from allowed tags
     .trim();
 }
 

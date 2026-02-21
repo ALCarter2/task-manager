@@ -1,0 +1,126 @@
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* Toolbar */
+.task-list__toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  gap: 12px;
+}
+
+.task-list__tabs {
+  display: flex;
+  background: var(--color-surface);
+  border-radius: var(--radius);
+  padding: 3px;
+  box-shadow: var(--shadow-sm);
+  gap: 2px;
+}
+
+.task-list__tab {
+  padding: 6px 14px;
+  border: none;
+  background: transparent;
+  border-radius: 7px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: all var(--transition);
+  font-family: inherit;
+}
+
+.task-list__tab:hover:not(.is-active) {
+  color: var(--color-text);
+  background: var(--color-bg);
+}
+
+.task-list__tab.is-active {
+  background: var(--color-accent);
+  color: white;
+  box-shadow: 0 1px 4px rgba(79, 70, 229, 0.35);
+}
+
+.task-list__priority-select {
+  padding: 7px 10px;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-text);
+  background: var(--color-surface);
+  cursor: pointer;
+  outline: none;
+  transition: border-color var(--transition);
+  font-family: inherit;
+  box-shadow: var(--shadow-sm);
+}
+
+.task-list__priority-select:focus {
+  border-color: var(--color-accent);
+}
+
+/* Items */
+.task-list__items {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Empty state */
+.task-list__empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 56px 24px;
+  color: var(--color-text-muted);
+  text-align: center;
+}
+
+.task-list__empty-icon {
+  margin-bottom: 16px;
+  opacity: 0.3;
+}
+
+.task-list__empty-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  margin-bottom: 4px;
+}
+
+.task-list__empty-sub {
+  font-size: 13px;
+  color: var(--color-border-hover);
+}
+
+/* Footer */
+.task-list__footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.task-list__clear {
+  border: none;
+  background: none;
+  font-size: 13px;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition);
+  font-family: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.task-list__clear:hover {
+  color: var(--color-high);
+}
